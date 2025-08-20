@@ -1,19 +1,17 @@
+    10 let numero = RND (100)
+    20 input "Tente adivinhar em qual numero estou pensando(0-100): "; tentativa
+    30 if tentativa = numero then goto 100
+    40 if tentativa > numero then goto 150
+    50 if tentativa < numero then goto 200
 
-        10 numero = int(rnd * 101)
-        20 print "Tente adivinhar o numero de 0 a 100!"
-        
-        30 input "Digite seu palpite: "; palpite
+    60 input "Em qual número estou pensando? "; tentativa
+    goto 30
 
-        50 if palpite >= 0 and palpite <= 100 then goto 70 else print "Palpite invalido! Digite um numero entre 0 e 100"
-        60 goto 30
-        70 print "palpite valido"
-        170 if palpite < numero then goto 200
-        180 if palpite > numero then goto 300
-        190 if palpite = numero then goto 400
+    100 print "Parabéns!!! Você acertou o número"
+    110 end
 
-        200 print "O numero correto e MAIOR!" 
-        250 goto 30
-        300 print "O numero correto e MENOR!" 
-        350 goto 30   
-        400 print "Parabens! Voce acertou o numero!"
-        500 end
+    150 print "Muito alto, tente um número menor"
+    160 goto 60
+
+    200 print "Muito pequeno, tente um número maior"
+    210 goto 60
