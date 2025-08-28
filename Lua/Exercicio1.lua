@@ -1,5 +1,6 @@
 print("Digite seu primeiro nomero: ")
 local a = tonumber(io.read())
+
 print("Digite seu segundo numero: ")
 local n = tonumber(io.read())
 
