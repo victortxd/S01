@@ -1,7 +1,7 @@
 use std::io;
 
 fn verificar_senha(senha: &str) -> bool {
-    // Verifica comprimento
+    
     if senha.len() < 8 {
         return false;
     }
