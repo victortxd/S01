@@ -42,9 +42,9 @@ fn main()
 
     if (soma_par && escolha_jogador1 == "par") || (!soma_par && escolha_jogador1 == "impar")
     {
-        println!("🏆 Jogador 1 venceu!");
+        println!(" Jogador 1 venceu!");
     } else {
-        println!("🏆 Jogador 2 venceu!");
+        println!(" Jogador 2 venceu!");
     }
 }
 
