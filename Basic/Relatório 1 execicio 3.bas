@@ -1,6 +1,6 @@
 10 input "Digite a temperatura em Celsius: "; celsius
 
-30 kelvin = celsius + 273.15
+30 kelvin = celsius + 273
 
 50 fahrenheit = celsius * 9 / 5 + 32
 
