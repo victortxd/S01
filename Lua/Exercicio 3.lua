@@ -11,7 +11,7 @@ valor = tonumber(io.read())
       end
   table.insert(numeros, valor)
   end
-for i = 1, #numeros do --# pega o tamanho da tabela
+for i = 1, #numeros do
         if numeros[i] % 2 == O then
             table.insert(tabela, numeros[i])
         end
