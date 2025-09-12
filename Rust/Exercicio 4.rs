@@ -15,8 +15,7 @@ fn main()
 
     let media = calcular_media(nota1, nota2, nota3);
 
-    println!("Notas: {}, {}, {}", nota1, nota2, nota3);
-    println!("Média ponderada: {:.2}", media);
+    println!("Média: {}", media);
 
     if media >= 7.0 
     {
