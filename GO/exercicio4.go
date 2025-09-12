@@ -14,8 +14,7 @@ func main()
 	var ee string
 	var ec string
 
-	for true
-  {
+	for true {
 		fmt.Print("faça o login: ")
 		fmt.Scanln(&ee)
 		fmt.Print("senha: ")
