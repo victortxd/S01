@@ -1,29 +1,28 @@
 use std::io;
 
-fn verificar_senha(senha: &str) -> bool 
+fn verificar_senha(m: &str) -> bool 
     {
     
-    if senha.len() < 8 
+    if m.len() < 8 
     {
         return false;
     }
 
-    let mut tem_numero = false;
-    let mut tem_maiuscula = false;
+    let mut t_numero = false;
+    let mut t_maiuscula = false;
 
-    for c in senha.chars()
+    for c in m.chars()
         {
         if c.is_ascii_digit() 
         {
-            tem_numero = true;
+            t_numero = true;
         }
         if c.is_ascii_uppercase()
         {
-            tem_maiuscula = true;
+            t_maiuscula = true;
         }
     }
-
-    senha.len() >= 8 && tem_numero && tem_maiuscula
+    m.len() >= 8 && t_numero && t_maiuscula
 }
 
 fn main() 
@@ -32,12 +31,12 @@ fn main()
         {
         println!("Digite sua senha:");
 
-        let mut senha = String::new();
+        let mut m = String::new();
         io::stdin()
-            .read_line(&mut senha)
+            .read_line(&mut m)
             .expect("Falha ao ler entrada");
 
-        let senha = senha.trim();
+        let senha = m.trim();
         if verificar_senha(senha) 
         {
             println!("Senha válida! Acesso concedido.");
