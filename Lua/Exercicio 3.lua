@@ -1,22 +1,24 @@
-local numeros {}
-local valor
-local tabela = {}
+OriginalArr = {}
 
-print("Digite números (digite O para parar): ")
+io.write("Digite o numero de elementos do array: ")
+n = tonumber(io.read())
 
-while true do
-valor = tonumber(io.read())
-      if valor == 0 then
-          break
-      end
-  table.insert(numeros, valor)
-  end
-for i = 1, #numeros do
-        if numeros[i] % 2 == O then
-            table.insert(tabela, numeros[i])
+for i = 1, n do
+    io.write("Digite o elemento " .. i .. ": ")
+    OriginalArr[i] = tonumber(io.read())
+end
+
+function PA(arr)
+    local PA = {}
+    for i = 1, n do
+        if arr[i] % 2 == 0 then
+            table.insert(PA, arr[i])
         end
-  end
-print("Sua tabela somente com números pares: ")
-    for i ,v in ipairs(tabela) do
-      print(v)
+    end
+    return PA
+end
+
+PA = PA(OriginalArr)
+for i = 1, #PA do
+    print(PA[i])
 end
