@@ -3,7 +3,7 @@ import "fmt"
 func fi(n int)
 {
 	var a int = 0
-  var b int = 1
+  	var b int = 1
   
 	for i := 0; i < n; i++ 
   {
