@@ -1,37 +1,38 @@
 use std::io;
 
-fn imprimir_tabuada(numero: i32, limite_inferior: i32, limite_superior: i32)
+fn imprimir_tabuada(numero: i32, limite_inf: i32, limite_sup: i32)
   {
-    println!("\n=== Tabuada do {} ===", numero);
-    for i in limite_inferior..=limite_superior 
-      {
-        println!("{} x {} = {}", numero, i, numero * i);
-      }
+  for i in limite_inf..=limite_sup
+    {
+    println!("{} x {} = {}", numero, i, numero * i);
   }
-
+}
 fn main() 
   {
-    let mut entrada = String::new();
+  let mut numero = String::new();
+  let mut limite_inf = String::new();
+  let mut limite_sup = String::new();
 
-    println!("Digite o número da tabuada:");
-    io::stdin()
-        .read_line(&mut entrada)
-        .expect("Erro ao ler o número!");
-    let numero: i32 = entrada.trim().parse().expect("Digite um número válido!");
-    entrada.clear();
+  println!("Digite o número para a tabuada:");
+  io::stdin()
+    .read_line(&mut numero)
+    .expect("Falha ao ler o número");
+  
+  println!("Digite o limite inferior:");
+  io::stdin()
+    .read_line(&mut limite_inf)
+    .expect("Falha ao ler o limite inferior");
+  
+  println!("Digite o limite superior:");
+  io::stdin()
+    .read_line(&mut limite_sup)
+    .expect("Falha ao ler o limite superior");
 
-    println!("Digite o limite inferior:");
-    io::stdin()
-        .read_line(&mut entrada)
-        .expect("Erro ao ler o número!");
-    let limite_inferior: i32 = entrada.trim().parse().expect("Digite um número válido!");
-    entrada.clear();
+  let num: i32 = numero.trim().parse().expect("digite um número válido");
+  
+  let p1: i32 = limite_inf.trim().parse().expect("digite um número válido");
+  
+  let v1: i32 = limite_sup.trim().parse().expect("digite um número válido");
 
-    println!("Digite o limite superior:");
-    io::stdin()
-        .read_line(&mut entrada)
-        .expect("Erro ao ler o número!");
-    let limite_superior: i32 = entrada.trim().parse().expect("Digite um número válido!");
-
-    imprimir_tabuada(numero, limite_inferior, limite_superior);
+  imprimir_tabuada(num, p1, v1);
 }
