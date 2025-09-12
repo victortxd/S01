@@ -1,11 +1,11 @@
-10 input "Digite a temperatura em Celsius: "; celsius
+10 input "Digite a temperatura em Celsius: "; ce
 
-30 kelvin = celsius + 273
+30 ke = VAL(ce) + 273.15
 
-50 fahrenheit = celsius * 9 / 5 + 32
+50 fa = (VAL(ce) * 1.8) + 32
 
-110 print "Temperatura em Celsius: " + celsius 
-120 print "Temperatura em Kelvin: " + kelvin 
-130 print "Temperatura em Fahrenheit: "+ fahrenheit
+110 print "Temperatura em Celsius: " ce 
+120 print "Temperatura em Kelvin: " ke 
+130 print "Temperatura em Fahrenheit: " fa
 140 end
 
