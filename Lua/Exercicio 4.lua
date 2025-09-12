@@ -1,20 +1,20 @@
 print("Digite seu primeiro numero:" )
-local n1 = tonumber(io.read())
+local num1 = tonumber(io.read())
 
 print("Digite seu segundo numero: ")
-local n2 = tonumber(io.read())
+local num2 = tonumber(io.read())
   
 print("Digite um operador matemático: ")
 local op = tonumber(io.read())
   
-function calculadora(n1, n2, op)
+function calculadora(num1, num2, op)
         if op =="+" then
-            print(n1 + n2)
+            print(num1 + num2)
         elseif op == "-" then
-            print(n1 - n2)
+            print(num1 - num2)
         elseif op "*" then
-            print(n1 * n2)
+            print(num1 * num2)
         elseif op =="/" then
-            print(n1 / n2)
+            print(num1 / num2)
  end
 end
