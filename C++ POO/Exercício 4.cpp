@@ -2,63 +2,73 @@
 #include <list>
 using namespace std;
 
-class SerVivo {
-  public:
+class SerVivo 
+{
+    public:
     string nome;
 
-    SerVivo(string nome) {
+    SerVivo(string nome) 
+    {
         this->nome = nome;
     }
 
-    virtual void apresentar() {
+    virtual void apresentar() 
+    {
       cout << "Nome: " << nome << " sou ser vivo." << endl;
     }
     virtual ~SerVivo() {};
 };
-class Humano : public SerVivo {
-  public:
-    Humano(string nome) : SerVivo(nome) {
-      this->nome = nome;
+class Humano : public SerVivo
+{
+    public:
+    Humano(string nome) : SerVivo(nome) 
+    {
+    this->nome = nome;
     }
 
-    void apresentar() override {
-      cout << "Olá, meu nome é " << nome << " prazer em conhecer, sou um humano." << endl;
+    void apresentar() override 
+    {
+      cout << "oi, meu nome é " << nome << " prazer em conhecer, eu sou um humano." << endl;
     }
 };
-class Elfo : public SerVivo {
-  public:
-    Elfo(string nome) : SerVivo(nome){
-      this->nome = nome;
+class Elfo : public SerVivo 
+{
+    public:
+    Elfo(string nome) : SerVivo(nome)
+    {
+    this->nome = nome;
     }
 
     void apresentar() override{
-      cout << "Prazer em conhecer, me chamo " << nome << " sou um elfo." << endl;
+      cout << "oi, meu nome é " << nome << " prazer em conhecer, eu sou um elfo." << endl;
     }
 };
-class Fada : public SerVivo {
-  public:
-    Fada(string nome) : SerVivo(nome){
-      this->nome = nome;
+class Fada : public SerVivo 
+{
+    public:
+    Fada(string nome) : SerVivo(nome)
+    {
+    this->nome = nome;
     }
 
-    void apresentar() override {
-      cout << "Ei! Escute! Escute! Meu nome é " << nome << " sou uma fada." << endl;
+    void apresentar() override 
+     {
+      cout << "oi, meu nome é " << nome << " prazer em conhecer, eu sou uma fada." << endl;
     }
 };
 
-int main() {
+int main() 
+{
   list<SerVivo*> seres;
 
-  seres.push_back(new Humano("João"));
-  seres.push_back(new Elfo("Tharival"));
-  seres.push_back(new Fada("Navi"));
+  seres.push_back(new Humano("Danver"));
+  seres.push_back(new Elfo("Trinit"));
+  seres.push_back(new Fada("Meracila"));
 
   for (SerVivo* ser : seres)
-    ser->apresentar();
-  
+  ser->apresentar();
   for (SerVivo* ser : seres)
-    delete ser;
-
+  delete ser;
   seres.clear();
   
   return 0;
