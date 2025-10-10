@@ -24,7 +24,7 @@ public class PokemonsDeFogo : Pokemon
   public override void Atacar()
   
   {
-    Console.WriteLine($"{nome} usou Bola de Fogo");
+    Console.WriteLine($"{nome} usou aniquilador flamejante");
     
   }
 }
@@ -34,7 +34,7 @@ public class PokemonsDeAgua : Pokemon
   public override void Atacar()
   
   {
-    Console.WriteLine($"{nome} usou Jato de Água");
+    Console.WriteLine($"{nome} usou tsunami");
     
   }
 }
