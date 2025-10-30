@@ -58,7 +58,7 @@ class Esquadrao extends IExplorador
         super();
         this.lider = lider;
         this.membros = [lider, ...membrosIniciais];
-    }
+    } 
 
     adicionarMembro(soldado)
   {
