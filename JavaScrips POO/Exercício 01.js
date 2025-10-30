@@ -19,7 +19,8 @@ class Pokemon
         if (this.#vida < 0) this.#vida = 0;
     }
 
-    atacar(alvo){
+    atacar(alvo)
+{
         const dano = 5;
         alvo.receberDano(dano);
         console.log(`${this.nome} usou Tackle em ${alvo.nome} e causou ${dano} de dano.`);
@@ -34,7 +35,8 @@ class PokemonFogo extends Pokemon
         this.bonusAtaque = bonus;
     }
 
-    atacar(alvo){
+    atacar(alvo)
+{
         const dano = 10 + this.bonusAtaque;
         alvo.receberDano(dano);
         console.log(`${this.nome} usou bafo do dragão em ${alvo.nome} e causou ${dano} de dano.`);
@@ -58,12 +60,11 @@ class PokemonAgua extends Pokemon
     }
 }
 
-//--------------Main------------------
 const Gengar = new Pokemon('Gengar', 'Normal', 20)
 const Kyogre  = new PokemonAgua('Kyogre ', 120, 5)
 const Ho-ho = new PokemonFogo('Ho-ho', 120, 10)
 
-let pokemons = [Eevee, Blastoise, Charizard];
+let pokemons = [Gengar, Kyogra, Ho-ho];
 
 pokemons.forEach(pokemon => 
   {
