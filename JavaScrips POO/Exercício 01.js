@@ -62,9 +62,9 @@ class PokemonAgua extends Pokemon
 
 const Gengar = new Pokemon('Gengar', 'Normal', 20)
 const Kyogre  = new PokemonAgua('Kyogre ', 120, 5)
-const Ho-ho = new PokemonFogo('Ho-ho', 120, 10)
+const Ho-ho = new PokemonFogo('Hoho', 120, 10)
 
-let pokemons = [Gengar, Kyogra, Ho-ho];
+let pokemons = [Gengar, Kyogra, Hoho];
 
 pokemons.forEach(pokemon => 
   {
