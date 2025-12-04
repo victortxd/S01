@@ -1,4 +1,4 @@
-% Fatos: Disciplinas (nome, créditos, area)
+% Fatos: Disciplinas (materias, créditos, area)
 disciplina(programacao, 8, fundamental).
 disciplina(calculo, 10, matematica).
 disciplina(estrutura_dados, 7, computacao).
