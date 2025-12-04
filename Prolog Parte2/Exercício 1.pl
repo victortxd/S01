@@ -27,7 +27,6 @@ prerequisito(projeto_integrador, banco_dados).
 prerequisito(projeto_integrador, sistemas_operacionais).
 
 % Fatos: Conhecimento de Alunos (aluno, Disciplina_concluida)
-% Configuração de Alunos para testes:
 concluiu(Arnold, programacao).
 concluiu(Arnold, calculo).
 concluiu(Arnold, estrutura_dados).
