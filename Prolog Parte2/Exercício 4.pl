@@ -1,57 +1,60 @@
-% Fatos: Disciplinas (materia, créditos, area)
-disciplina(programacao, 8, fundamental).
-disciplina(calculo, 10, matematica).
-disciplina(estrutura_dados, 7, computacao).
+% Fatos: Disciplinas (nome, créditos, area)
+disciplina(programacao1, 6, fundamental).
+disciplina(calculo1, 8, matematica).
+disciplina(estrutura_dados, 6, computacao).
 disciplina(algoritmos, 4, computacao).
 disciplina(banco_dados, 6, aplicacoes).
-disciplina(redes, 5, aplicacoes).
+disciplina(redes, 4, aplicacoes).
 disciplina(inteligencia_artificial, 8, computacao).
-disciplina(compiladores, 5, computacao).
-disciplina(teoria_grafos, 5, matematica).
-disciplina(estatistica, 10, matematica).
-disciplina(sistemas_operacionais, 10, computacao).
+disciplina(compiladores, 6, computacao).
+disciplina(teoria_grafos, 4, matematica).
+disciplina(estatistica, 6, matematica).
+disciplina(sistemas_operacionais, 6, computacao).
 disciplina(projeto_integrador, 10, aplicacoes).
 
-% Fatos: Pré-Requisitos (disciplina_prin, pre_req)
-prerequisito(estrutura_dados, programacao).
+% Fatos: Pré-Requisitos (disciplina_principal, pre_requisito)
+prerequisito(estrutura_dados, programacao1).
 prerequisito(algoritmos, estrutura_dados).
-prerequisito(banco_dados, programacao).
+prerequisito(banco_dados, programacao1).
 prerequisito(inteligencia_artificial, algoritmos).
-prerequisito(inteligencia_artificial, calculo).
+prerequisito(inteligencia_artificial, calculo1).
 prerequisito(compiladores, algoritmos).
 prerequisito(compiladores, estrutura_dados).
 prerequisito(sistemas_operacionais, estrutura_dados).
-prerequisito(teoria_grafos, calculo).
-prerequisito(estatistica, calculo).
+prerequisito(teoria_grafos, calculo1).
+prerequisito(estatistica, calculo1).
 prerequisito(projeto_integrador, banco_dados).
 prerequisito(projeto_integrador, sistemas_operacionais).
 
-% Fatos: Conhecimento de Alunos (aluno, disciplina_con)
-concluiu(Arnold, programacao).
-concluiu(Maria, calculo).
-concluiu(Maria, estrutura_dados).
-concluiu(Marques, estrutura_dados).
-concluiu(Marques, calculo).
-concluiu(Marques, programacao).
-concluiu(Rodyney, redes).
-concluiu(Rodyney, teoria_grafos).
-concluiu(João, calculo).
-concluiu(João, estatistica).
-concluiu(Thompson, teoria_grafos).
-concluiu(Thompson, estrutura_dados).
-concluiu(Sakura, algoritmos).
-concluiu(Sakura, redes). 
-concluiu(Sakura, banco_dados).
+% Fatos: Conhecimento de Alunos (aluno, disciplina_concluida)
+% Configuração de Alunos para testes:
+concluiu(maria, programacao1).
+concluiu(maria, calculo1).
+concluiu(joao, programacao1).
+concluiu(joao, estrutura_dados).
+concluiu(joao, calculo1).
+concluiu(ana, programacao1).
+concluiu(ana, redes).
+concluiu(ana, teoria_grafos).
+concluiu(pedro, calculo1).
+concluiu(pedro, estatistica).
+concluiu(pedro, teoria_grafos).
+concluiu(lucas, estrutura_dados).
+concluiu(lucas, algoritmos).
+concluiu(lucas, redes). 
+concluiu(lucas, banco_dados).
 
+disciplina_raiz(D) :-
 
-Disciplina_raiz(D) :-
-    Disciplina(D, _, _),
-    \+ prereq(D, _).
+    disciplina(D, _, _),
+    
+    \+ prerequisito(D, _).
 
-Disciplina_folha(D) :-
-    Disciplina(D, _, _),
-    \+ prereq(_, D).
+disciplina_folha(D) :-
 
-% Query: % ?- Disciplina_raiz(D),
-Disciplina(D, _, Area),
+    disciplina(D, _, _),
+    \+ prerequisito(_, D).
+
+% Query: % ?- disciplina_raiz(D),
+disciplina(D, _, Area),
 Area \= aplicacoes.
