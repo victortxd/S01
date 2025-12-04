@@ -12,7 +12,7 @@ disciplina(estatistica, 10, matematica).
 disciplina(sistemas_operacionais, 10, computacao).
 disciplina(projeto_integrador, 10, aplicacoes).
 
-% Fatos: Pré-Requisitos (disciplina_principal, pre_requisito)
+% Fatos: Pré-Requisitos (Disciplina_principal, pre_requisito)
 prerequisito(estrutura_dados, programacao).
 prerequisito(algoritmos, estrutura_dados).
 prerequisito(banco_dados, programacao).
@@ -26,7 +26,7 @@ prerequisito(estatistica, calculo).
 prerequisito(projeto_integrador, banco_dados).
 prerequisito(projeto_integrador, sistemas_operacionais).
 
-% Fatos: Conhecimento de Alunos (aluno, disciplina_concluida)
+% Fatos: Conhecimento de Alunos (aluno, Disciplina_concluida)
 % Configuração de Alunos para testes:
 concluiu(Arnold, programacao).
 concluiu(Arnold, calculo).
@@ -45,10 +45,10 @@ concluiu(Sakura, redes).
 concluiu(Sakura, banco_dados).
 
 alto_impacto(D) :-
-    disciplina(D, Creditos, _),
+    Disciplina(D, Creditos, _),
     Creditos > 5,
     prerequisito(D1, D),
     prerequisito(D2, D),
     D1 \= D2.
 
-% Query: % ?- disciplina(D, 4, matematica), \+ prerequisito(_, D).
+% Query: % ?- Disciplina(D, 4, matematica), \+ prerequisito(_, D).
