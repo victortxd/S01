@@ -44,19 +44,18 @@ concluiu(lucas, algoritmos).
 concluiu(lucas, redes). 
 concluiu(lucas, banco_dados).
 
-especialista_comp(Aluno) :-
+disciplina_raiz(D) :-
 
-    concluiu(Aluno, D1),
-    disciplina(D1, _, computacao),
+    disciplina(D, _, _),
     
-    concluiu(Aluno, D2),
-    disciplina(D2, _, computacao),
+    \+ prerequisito(D, _).
+
+disciplina_folha(D) :-
+
+    disciplina(D, _, _),
     
-    D1 \= D2.
+    \+ prerequisito(_, D).
 
-deficiencia_mat(Aluno) :-
-
-    \+ (concluiu(Aluno, D),
-        disciplina(D, _, matematica)).
-
-% Query: % ?- especialista_comp(A), deficiencia_mat(A).
+% Query: % ?- disciplina_raiz(D),
+disciplina(D, _, Area),
+Area \= aplicacoes.
